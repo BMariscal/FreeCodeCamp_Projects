@@ -1,0 +1,54 @@
+<style>
+  .red-text {
+    color: 	#696969;
+  }
+    p {
+    font-size: 20px;
+    font-family: Raleway, Helvetica;
+    padding: 20px;
+  }
+  h1 {
+  font-family: Merriweather, Helvetica;
+
+}
+  .list {
+    font-size: 20px;
+    font-famly: Raleway
+  }
+  .image{
+    width: 900px;
+  }
+    .thick-border {
+    border-width: 20px;
+  
+  }
+  .color-background{
+    background-color:#FAEBD7;
+    padding: 90px
+  }
+.background{
+  background-color: white;
+  padding:50px;
+}
+  .center-title{
+    padding: 20px
+    
+  }
+  .box {
+   
+    border-width: 10px;
+    text-align: center;
+  }
+  .box1 {
+
+    border-width: 20px;
+    text-align: left;
+    
+  }
+.bottom-font{
+  font-size: 20px;
+}
+.text-center{
+  text-align: center;
+}
+</style>

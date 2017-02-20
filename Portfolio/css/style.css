@@ -1,0 +1,304 @@
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+.fancy {padding-top:80px;padding-left: 20px; padding-right: 10px;margin-left:10%;margin-right:10%;height:900px;color: #000; background-color:#f4f6f7;box-shadow: 3px 3px 8px #888888;
+}
+ 
+.fancy1 {position: relative;color: #000; background-color: #ffffff;
+}
+ 
+ #section1 {padding-top:50px;height:1000px; background: url(https://image.ibb.co/fXgqwF/BARRIO_SUR.jpg); 
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ 
+  #section2 {padding-top:50px;height:1000px;color: #127999; background-color:#009acd ;}
+  #section3 {padding-left:40px;padding-right:40px;position: relative;color: #fff; background-color:#002e3d;}
+
+
+.myphoto{
+ 
+ display: block; 
+/*   position: relative; */
+    margin: auto;
+/*  padding-top: 50px; */
+    width: 28%;
+}
+.photo_border{
+ 
+   
+    border-style: solid;
+    border-radius: 3%; 
+}
+
+h1{
+  font-size: 40px;
+  text-align: center;
+    font-family: Raleway, Helvetica;
+    padding: 100px;
+}
+.info {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+    font-family: Raleway, Helvetica;
+    padding: 6px;
+  
+}
+text-center{
+text_align: center;
+
+}
+
+.top {
+  display: none;
+  margin-top:1.95%;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  opacity: 1;
+  text-align: center;
+  font-family: 'helvetica';
+  font-size: 40px;
+  font-weight: 200;
+  color: ##333333;
+  text-shadow: 2px 2px 2px #1b1208;
+}
+.top1{
+  margin-bottom:100%;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  opacity: 9;
+  text-align: center;
+  font-family: 'helvetica';
+  font-size: 25px;
+  font-weight: 100;
+  color:#8b6508;
+  text-shadow: 2px 2px 4px #1b1208 ;
+;
+} 
+
+/* .title1 {
+  position: absolute;
+  top: 10%;
+  left: 150px;
+}
+.title {
+  position: center;
+  top: 10%;
+  left: 100px;
+} */
+
+
+
+
+
+
+
+@import '//codepen.io/chrisdothtml/pen/ojLzJK.css';
+.social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fa {
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  -webkit-transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+          transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.social-btns .btn:before {
+  top: 90%;
+  left: -110%;
+}
+.social-btns .btn .fa {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.social-btns .btn.github:before {
+  background-color: #444444;
+}
+.social-btns .btn.github .fa {
+  color: #444444;
+}
+.social-btns .btn.twitter:before {
+  background-color: #3cf;
+}
+.social-btns .btn.twitter .fa {
+  color: #3cf;
+}
+.social-btns .btn.google:before {
+  background-color: #dc4a38;
+}
+.social-btns .btn.google .fa {
+  color: #dc4a38;
+}
+.social-btns .btn.linkedin:before {
+  background-color: #007BB6;
+}
+.social-btns .btn.linkedin .fa {
+  color: #007BB6;
+}
+
+.social-btns .btn:focus:before,
+.social-btns .btn:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.social-btns .btn:focus .fa,
+.social-btns .btn:hover .fa {
+  color: #fff;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+/* .social-btns {
+  height: 90px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+.social-btns {
+  position: relative;
+  margin:auto;
+  font-size: 0;
+   text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+}
+.social-btns .btn {
+  display: inline-block;
+  background-color: #fff;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+  opacity: 0.99;
+}
+
+.social-btns .btn:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.social-btns .btn .fa {
+  font-size: 38px;
+  vertical-align: middle;
+}
+.footer{
+  color:white;
+}
+.text-center1{
+text-align: center;
+}
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.snip0030 {
+  color: #fff;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  background: #000000;
+}
+figure.snip0030 img {
+  opacity: 1;
+  width: 100%;
+  position: relative;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip0030 > div {
+  border-radius: 5px;
+  display: block;
+  content: '';
+  position: absolute;
+  background-color: #000;
+  top: 50%;
+  left: 50%;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+figure.snip0030 > div i {
+  font-size: 38px;
+  padding: 6px;
+  color: #ffffff;
+  line-height: 70px;
+  opacity: 0.7;
+}
+figure.snip0030 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+figure.snip0030:hover img,
+figure.snip0030.hover img {
+  opacity: 0.5;
+}
+figure.snip0030:hover > div,
+figure.snip0030.hover > div {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+<--!footer-->
+*,
+*:before,
+*:after {
+  /* padding is now part of the height & width */
+  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.page-holder {
+  position: relative;
+  padding: 0px;
+}
+
+footer {
+  position: static;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding: 15px;
+  background-color: #1c1c1c;
+  color: #fff;
+}

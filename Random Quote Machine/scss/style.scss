@@ -1,0 +1,39 @@
+
+html,body
+{
+    width: 100%;
+    height: 10%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+  font-family: Helvetica;
+   -webkit-font-smoothing: antialiased;
+  padding-top:10px;height:700px; background-color:#5582bd; 
+   
+}
+.fancybox {padding-top:80px;padding-left: 10px; padding-right: 10px;margin-left:9%;margin-right:9%;height:300px;color: #000; background-color:#f2ebe4;box-shadow: 3px 3px 9px #888888;
+ border-radius: 25px;
+}
+
+h4 {
+    
+   font-style: italic;
+  
+}
+
+#tw {
+height:27px;
+ margin: 20px 50px; 
+
+  }
+
+
+
+.buttons{
+        height:20px; 
+    width:100px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:80%;
+}
