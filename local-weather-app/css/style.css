@@ -1,0 +1,54 @@
+body {
+  font-family: 'Montserrat';
+  background: url("https://image.ibb.co/n8LCtv/anthony_cantin_128670.jpg");
+  background-repeat: no-repeat;
+}
+
+div {
+  font-size: 30px;
+  margin-top: 100px;
+  color: #1d1e21;
+  background-color: #f9fbff;
+  margin: auto;
+  width: 40%;
+  border: 3px;
+  padding: 20px;
+  border-radius: 5px;
+  background-size: 50px;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin-top: 10px;
+  color: white;
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.button {
+  padding: 10px 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #f8f8f8;
+  background-color: #2d89e5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+.button:hover {
+  background-color: #1e5b99
+}
+
+.button:active {
+  background-color: #2d89e5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+ul {
+  margin-top: 60px;
+}
