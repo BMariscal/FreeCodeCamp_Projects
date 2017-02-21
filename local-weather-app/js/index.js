@@ -4,18 +4,11 @@ $(document).ready(function() {
   var fTemp;
   var cTemp;
   var kelvin;
-
-  if (navigator.geolocation) {
-    //finds local latitude and longitude
-    navigator.geolocation.getCurrentPosition(function(position) {
-      long =position.coords.longitude;
-      lat = position.coords.latitude;
-
-      console.log(long)
-      console.log(lat)
-
-      //Open Weather API
-      var api = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=80b276098783c41fc2f53035089e9f02"
+  $.getJSON("http://ip-api.com/json",function(data2){
+    lat=data2.lat;
+    long=data2.lon;
+    
+         var api = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=80b276098783c41fc2f53035089e9f02"
       console.log(api)
 
       //JSON call for Open Weather API
@@ -89,6 +82,19 @@ $(document).ready(function() {
           $('body').css('background-image', 'url(https://i.ytimg.com/vi/lwPKC8RTvN8/maxresdefault.jpg)')
         }
       });
-    });
-  }
+    
+  });
+//   if (navigator.geolocation) {
+//     //finds local latitude and longitude
+//     navigator.geolocation.getCurrentPosition(function(position) {
+//       long =position.coords.longitude;
+//       lat = position.coords.latitude;
+
+//       console.log(long)
+//       console.log(lat)
+  
+
+      //Open Weather API
+ 
+  
 });
