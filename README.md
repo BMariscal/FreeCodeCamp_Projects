@@ -14,8 +14,8 @@ Front End Development Projects
       * HTML, CSS, JSON, openweathermap API, jQuery, JS
   5. [Wikipedia Viewer](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/wikiviewer)
       * HTML, CSS, jQuery, Ajax, wikipedia API, JS
-  6. [Javascript Calculator] (https://github.com/BMariscal/Calculator)
+  6. [Javascript Calculator](https://github.com/BMariscal/Calculator)
       * HTML, CSS, Javascript
-  7. [Pomodoro Timer] (https://github.com/BMariscal/Pomodoro-Timer)
+  7. [Pomodoro Timer](https://github.com/BMariscal/Pomodoro-Timer)
     * HTML, CSS, Javascript
 
