@@ -10,7 +10,7 @@ Front End Development Projects
       * HTML, CSS, jQuery
   3. [Random Quote Machine](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/Random%20Quote%20Machine)
       * HTML, CSS/SCSS, jQuery, Ajax
-  4. [Local Weather App](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/local-weather-app)
+  4. [Local Weather App](https://github.com/BMariscal/local-weather-app)
       * HTML, CSS, JSON, openweathermap API, jQuery, JS
   5. [Wikipedia Viewer](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/wikiviewer)
       * HTML, CSS, jQuery, Ajax, wikipedia API, JS
