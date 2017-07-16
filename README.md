@@ -17,5 +17,5 @@ Front End Development Projects
   6. [Javascript Calculator](https://github.com/BMariscal/Calculator)
       * HTML, CSS, Javascript
   7. [Pomodoro Timer](https://github.com/BMariscal/Pomodoro-Timer)
-    * HTML, CSS, Javascript
+      * HTML, CSS, Javascript
 
