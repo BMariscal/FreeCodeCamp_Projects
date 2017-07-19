@@ -1,4 +1,4 @@
-# Tic-tac-toe: [Link to codepen](https://codepen.io/ohohoreos/full/YQoKyM/)
+## Tic-tac-toe: [Link](https://di1qzyhn9187c.cloudfront.net/)
 
 User Story: I can play a game of Tic Tac Toe with the computer.
 
