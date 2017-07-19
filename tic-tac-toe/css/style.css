@@ -1,0 +1,141 @@
+.box {
+  width: 80px;
+  height: 80px;
+  border: 1px solid red;
+}
+
+#top-row, #middle-row, #bottom-row {
+  display: flex;
+}
+#tic-tac-toe-box {
+  margin: auto;
+  width: 20%;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+#top-div {
+  width: 30%;
+  background: #ececec;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  z-index: 1;
+}
+.container {
+  z-index: 1;
+}
+
+.button2 {
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #0059b2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover {
+  background-color: #00478e;
+}
+
+.button:active {
+  background-color: #00478e;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+button:focus {
+  outline: 0;
+}
+
+#token {
+  display: flex;
+
+  margin-left: 12%;
+}
+#X, #O {
+  padding-left: 30px;
+}
+#X:hover, #O:hover {
+  color: blue;
+  cursor: pointer;
+}
+#X:active, #O:active {
+  color: yellow;
+}
+h3 {
+  margin-left: 50px;
+}
+#myButtons {
+  margin-left: 60px;
+}
+
+#start {
+  margin-left: 150px;
+}
+.tokenBtn {
+  width: 100%;
+  height: 100%;
+}
+
+#controlBox {
+  height: 150px;
+  width: 500px;
+  border: 2px solid #ececec;
+  margin-left: -135px;
+  display: none;
+  margin-top: 15px;
+}
+#scores {
+  display: flex;
+  margin-left: 40px;
+}
+#Xscore {
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-right: 30px;
+}
+#Oscore {
+  padding-top: 5px;
+  padding-left: 30px;
+}
+p {
+  padding-top: 5px;
+  padding-left: 30px;
+  font-size: 20px;
+}
+#restart {
+  margin-left: 200px;
+  height: 15px;
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+#Winner {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+#selectToken {
+  display: none;
+}
+#startGameButton {
+  display: none;
+}
+html,body{
+  max-width: 100%;
+  overflow-x: hidden;
+}

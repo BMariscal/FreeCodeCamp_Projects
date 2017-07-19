@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Tic-tac-toe</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+
+<body>
+  <div id="top-div">
+    <div class="container">
+      <div>
+        <h3>How do you want to play?</h3>
+        <div id="myButtons">
+          <button class="button button2" onclick="players(1)">1 Player</button>
+
+          <button class="button button2" onclick="players(2)">2 Players</button>
+        </div>
+        <div id="selectToken">
+          <h3> Would you like to be X or O?</h3>
+          <div id="token">
+            <div id='X' onclick="token('X')">
+              <h2>X</h2></div>
+            <div id='O' onclick="token('O')">
+              <h2>O</h2></div>
+
+          </div>
+        </div>
+        <div id="startGameButton">
+          <button class="button button2" id="start" onclick="start()">Start</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div id="tic-tac-toe-box">
+    <div id="top-row">
+      <div id="0" class="box"><button id="btn0" class="tokenBtn" onclick="clicked(0)"></button></div>
+      <div id="1" class="box"><button id="btn1" class="tokenBtn" onclick="clicked(1)"></button></div>
+      <div id="2" class="box"><button id="btn2" class="tokenBtn" onclick="clicked(2)"></button></div>
+    </div>
+    <div id="middle-row">
+      <div id="3" class="box"><button id="btn3" class="tokenBtn" onclick="clicked(3)"></button></div>
+      <div id="4" class="box"><button id="btn4" class="tokenBtn" onclick="clicked(4)"></button></div>
+      <div id="5" class="box"><button id="btn5" class="tokenBtn" onclick="clicked(5)"></button></div>
+    </div>
+    <div id="bottom-row">
+      <div id="6" class="box"><button id="btn6" class="tokenBtn" onclick="clicked(6)"></button></div>
+      <div id="7" class="box"><button id="btn7" class="tokenBtn" onclick="clicked(7)"></button></div>
+      <div id="8" class="box"><button id="btn8" class="tokenBtn" onclick="clicked(8)"></button></div>
+    </div>
+
+    <div id="controlBox">
+      <div id="scores">
+        <h4>Scores: </h4>
+        <p>X</p>
+        <div id="Xscore" style="font-size: 20px; color: red;"></div>
+        <p>O</p>
+        <div id="Oscore" style="font-size: 20px; color:red;"></div>
+        <div id="Winner" style="font-size:20px; color: #000066;"></div>
+      </div>
+      <button class="button button2" id="restart" onclick="restart()">restart</button>
+    </div>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
