@@ -27,6 +27,7 @@
   margin-right: auto;
   margin-top: 20px;
   z-index: 1;
+background: linear-gradient(to top right, #3399ff -50%, #4C6A92 97%);
 }
 .container {
   z-index: 1;
@@ -56,7 +57,7 @@
 
 .button:active {
   background-color: #00478e;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
 button:focus {
@@ -70,23 +71,34 @@ button:focus {
 }
 #X, #O {
   padding-left: 30px;
+  color: #fafafa;
+  font-family: 'Raleway', sans-serif;
 }
 #X:hover, #O:hover {
-  color: blue;
+  color: #F6D155;
   cursor: pointer;
 }
 #X:active, #O:active {
-  color: yellow;
+  color: #838487;
 }
 h3 {
   margin-left: 50px;
+  color: #fafafa;
+  font-family: 'Raleway', sans-serif;
 }
+h3:hover{
+  color: #F6D155
+}
+#playernum:hover{
+  color:#F6D155;
+}
+
 #myButtons {
   margin-left: 60px;
 }
 
 #start {
-  margin-left: 150px;
+  margin-left: 140px;
 }
 .tokenBtn {
   width: 100%;
@@ -100,6 +112,7 @@ h3 {
   margin-left: -135px;
   display: none;
   margin-top: 15px;
+  background-color: #f2f2f3;
 }
 #scores {
   display: flex;
@@ -128,6 +141,7 @@ p {
 #Winner {
   margin-top: 5px;
   margin-left: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 #selectToken {
   display: none;
@@ -137,4 +151,5 @@ p {
 }
 html,body{
   width:100%;
-}
+  background-color: #fafafa;
+} 
