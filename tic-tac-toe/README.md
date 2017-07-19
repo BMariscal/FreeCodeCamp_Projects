@@ -1,4 +1,4 @@
-#Tic-tac-toe
+# Tic-tac-toe
 
 User Story: I can play a game of Tic Tac Toe with the computer.
 
