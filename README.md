@@ -18,5 +18,6 @@ Front End Development Projects
       * HTML, CSS, Javascript
   7. [Pomodoro Timer](https://github.com/BMariscal/Pomodoro-Timer)
       * HTML, CSS, Javascript
-  8. [Tic-tac-toe]()
+  8. [Tic-tac-toe](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/tic-tac-toe)
+      * HTML, CSS, Javascript
 
