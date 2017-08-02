@@ -8,6 +8,8 @@ let winnerTally;
 let comptoken;
 let compcall;
 let currentPlayer;
+let targetPosition = [];
+let computerCount = 0;
 
 // choose number of players playing
 function players(x) {
@@ -143,8 +145,9 @@ function computer() {
   document.getElementById("Winner").innerHTML = "Computer";
   comptoken = symb === "X" ? "O" : "X";
   let index = Math.floor(Math.random() * 9);
-  if (gameArr[index] === "") {
+  if (gameArr[index] === "" && computerCount === 0) {
     clickCount++;
+    computerCount++;
     gameArr.splice(index, 1, comptoken);
     gameView(gameArr);
     let winner = checkWinner(gameArr);
@@ -152,10 +155,85 @@ function computer() {
     setTimeout(function() {
       document.getElementById("Winner").innerHTML = "Your turn " + symb;
     }, 1000);
-  } else {
+  } else if(computerCount > 0){
+     let newidx = computerChoice(gameArr, comptoken);
+     clickCount++;
+     computerCount++;
+     gameArr.splice(newidx, 1, comptoken);
+     gameView(gameArr);
+     let winner = checkWinner(gameArr);
+    theWinner(winner);
+    setTimeout(function() {
+      document.getElementById("Winner").innerHTML = "Your turn " + symb;
+    }, 1000);
+      
+  }else {
     computer();
   }
 }
+
+//makes computer smarter
+function computerChoice(arr,token){
+    const opponentToken = (token === "X"? "O": "X");
+    const winner = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+  
+  for (let i = 0; i < winner.length; i++) {
+    const [a, b, c] = winner[i]; 
+    const idx1 = (arr[a] === token && arr[b] === token) && arr[c] === "";
+    const idx2 = (arr[a] === token && arr[c] === token) && arr[b] === "";
+    const idx3 = (arr[b] === token && arr[c] === token) && arr[a] === "";
+    const first =(arr[a] === opponentToken && arr[b] === opponentToken) && arr[c] === "";
+    const second =(arr[a] === opponentToken && arr[c] === opponentToken) && arr[b] === "";
+    const third =(arr[b] === opponentToken && arr[c] === opponentToken) && arr[a] === "";
+    if (idx1 || idx2 || idx3){
+        if ( idx3 ){
+          console.log('idx a' + a)
+          return a;
+        }else if(idx2 ){
+          console.log('idx b' + b)
+          return b;
+        }else if(idx1 ){
+          console.log('idx c' + c)
+          return c;
+        }    
+        
+    }
+    if( first|| second || third ){
+        if ( third ){
+          console.log('third a' + a)
+          return a;
+        }else if(second){
+           console.log('third b' + b)
+          return b;
+        }else if(first ){
+           console.log('third c' + c)
+          return c;
+        }    
+            
+    }
+  }
+ for (let i = 0; i < winner.length; i++) {
+    const [a, b, c] = winner[i]; 
+ 
+      if (arr[a] === ""){
+        return a;
+      }else if(arr[b] === ""){
+        return b;
+      }else if(arr[c] === ""){
+        return c;
+      }
+ }
+}
+
 
 //toggles token for two player game
 function newToken(symb) {
@@ -200,6 +278,7 @@ function checkWinner(arr) {
 function reset(arr) {
   gameArr = ["", "", "", "", "", "", "", "", ""];
   clickCount = 0;
+  computerCount = 0;
 
   for (let i = 0; i < arr.length; i++) {
     let index = i;
