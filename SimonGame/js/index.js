@@ -21,6 +21,7 @@ let strict = false;
 let counted = 0;
 let on = false;
 let currentArr = [];
+
 //================================================
 let colorBtnView = {
   green: function() {
@@ -160,6 +161,8 @@ let colorBtnView = {
     }
   }
 };
+
+
 //===================================================
 let computercolorBtnView = {
   colorSelect: function(color) {
@@ -217,7 +220,7 @@ let centerConsoleView = {
     }
   },
   startView: function() {
-    if (on) {
+    if (on && counted === 0) {
       start = true;
       this.init();
       document.getElementById("startAudio").play();
@@ -228,6 +231,13 @@ let centerConsoleView = {
       setTimeout(function() {
         controller.on();
       }, 2000);
+    } else {
+      start = false;
+      this.offBtnView();
+      setTimeout(function() {
+        on = true;
+        centerConsoleView.startView();
+      }, 1000);
     }
   },
   offBtnView: function() {
@@ -396,3 +406,4 @@ let model = {
 };
 
 controller.init();
+
