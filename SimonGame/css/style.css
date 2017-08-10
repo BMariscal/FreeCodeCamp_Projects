@@ -1,3 +1,4 @@
+
 .shell {
   background-color: #1e1e1e;
   border: 2px solid;
@@ -107,7 +108,7 @@ button:focus {
   background-color: #EBA53D;
 }
 
-.strictlight {
+#strictlight {
   cursor: none;
   border-radius: 50%;
   height: 10px;
@@ -115,12 +116,21 @@ button:focus {
   padding: 5px 5px;
   margin-left: 7px;
   border: 2px solid #1e1e1e;
+}
+
+.strictlightOff {
   background-color: #F00;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px,
     inset #441313 0 -1px 7px,
     rgba(255, 0, 0, 0.5) 0 1px 5px;
 }
+
+.strictlightON {
+  border-radius: 50%;
+  box-shadow: inset 0 0 1em #cc0000, 0 0 0.5em red;
+}
+
 #statusbtn {
   display: flex;
   float: right;
@@ -201,7 +211,7 @@ button:focus {
   border: 20px solid #1e1e1e;
   border-radius: 0 800px 0 0;
   float: right;
-  margin-top: -570px;
+  margin-top: -579px;
   z-index: -1;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   background: linear-gradient(
