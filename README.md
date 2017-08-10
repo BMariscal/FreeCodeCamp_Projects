@@ -21,7 +21,12 @@ Front End Development Projects
   8. [Tic-tac-toe](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/tic-tac-toe)
       * Interactive tic-tac-toe game: Play with a friend (2 Players) or against the computer (1 Player). Choose to play as X or O. 
       * HTML, CSS, Javascript. I used setTimeOut() to delay the computer's input/to make the computer's turn seem less abrupt. 
-  9. [Simon Game [in-progress]](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/SimonGame)
+  9. [Simon Game](https://github.com/BMariscal/FreeCodeCamp_Projects/tree/master/SimonGame)
+    * My first solo attempt at making an app with MVC in mind. It needs refactoring. 
+    * MVC App Written In Vanilla Javascript
+    * MP3 files
+  
+    
      
   
 
