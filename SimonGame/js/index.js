@@ -161,8 +161,6 @@ let colorBtnView = {
     }
   }
 };
-
-
 //===================================================
 let computercolorBtnView = {
   colorSelect: function(color) {
@@ -213,6 +211,7 @@ let centerConsoleView = {
       ? "yes"
       : "no";
     if (onBtn === "yes") {
+      this.init();
       on = true;
     } else {
       on = false;
@@ -233,11 +232,11 @@ let centerConsoleView = {
       }, 2000);
     } else {
       start = false;
+      this.init();
       this.offBtnView();
-      setTimeout(function() {
-        on = true;
-        centerConsoleView.startView();
-      }, 1000);
+      on = true;
+
+
     }
   },
   offBtnView: function() {
@@ -263,6 +262,9 @@ let centerConsoleView = {
   },
   countView: function() {
     let num = Number(counted) < 10 ? "0" + counted : counted;
+    if (num === "00"){
+      num = "!!"
+    }
     count = document.getElementById("count").innerHTML = `<h1>${num}</h1>`;
   },
   init: function() {
@@ -309,7 +311,7 @@ let controller = {
   wrong: function() {
     document.getElementById("count").innerHTML = `<h1>!!</h1>`;
     setTimeout(function() {
-      document.getElementById("count").innerHTML = `<h1>   </h1>`;
+      document.getElementById("count").innerHTML = `<h1>  </h1>`;
       setTimeout(function() {
         count = document.getElementById("count").innerHTML = `<h1>!!</h1>`;
         centerConsoleView.countView();
@@ -321,10 +323,18 @@ let controller = {
     let data = model.getData();
     let newarr = data.slice(0, counted);
     console.log(newarr + "newarr");
+    if (start === false) {
+      return;
+    }
     for (let i = 0; i < newarr.length; i++) {
       let index = i;
-
+      if (start === false) {
+        return;
+      }
       (function(index) {
+        if (start === false) {
+          return;
+        }
         setTimeout(function() {
           computercolorBtnView.colorSelect(newarr[index]);
         }, index * 1000);
@@ -406,4 +416,3 @@ let model = {
 };
 
 controller.init();
-
