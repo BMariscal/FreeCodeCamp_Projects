@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>SimonGame</title>
+
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <audio id="greenBtnAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <audio id="redBtnAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <audio id="blueBtnAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <audio id="yellowBtnAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <audio id="lostAudio">
+  <source src="https://s3.us-east-2.amazonaws.com/simonsound/fail-buzzer-01.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <audio id="startAudio">
+  <source src="https://s3.us-east-2.amazonaws.com/simonsound/button-09.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!--     <audio id="goodbyeAudio">
+  <source src="https://s3.us-east-2.amazonaws.com/simonsound/Fail-sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> -->
+
+  <div id="game">
+
+    <div class="shell">
+
+      <div class="quarterCircleTopLeft" onclick="colorBtnView.green()">
+        <audio id="myAudio" src="some_audio.mp3">
+      </div>
+      <div class="quarterCircleBottomLeft" onclick="colorBtnView.blue()">
+      </div>
+
+      <div class="quarterCircleTopRight" onclick="colorBtnView.red()">
+      </div>
+      <div class="quarterCircleBottomRight" onclick="colorBtnView.yellow()">
+      </div>
+      <div id="center">
+        <div id="brand">
+          <p id="brandName">SIMON®</p>
+        </div>
+
+        <div id="count"></div>
+
+
+        <div id="statusbtn">
+          <div id="start">
+            <button class="button startbutton" onclick="centerConsoleView.startView()"></button>
+          </div>
+          <div id="strict">
+            <button class="button strictlight"></button>
+            <button class="button strictbutton" onclick="centerConsoleView.strictView()"></button>
+
+
+          </div>
+        </div>
+        <div id="labels">
+          <span>COUNT</span>
+          <span style="padding-left:30px">START</span>
+          <span>STRICT</span>
+
+        </div>
+
+        <label class="switch">
+
+  <input class="switch-input" type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
