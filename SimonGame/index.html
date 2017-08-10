@@ -41,6 +41,12 @@
   <source src="https://s3.us-east-2.amazonaws.com/simonsound/button-09.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+  
+   <audio id="winAudio">
+  <source src="https://s3.us-east-2.amazonaws.com/simonsound/Twinkle-sound-effect.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> 
+  
 
 <!--     <audio id="goodbyeAudio">
   <source src="https://s3.us-east-2.amazonaws.com/simonsound/Fail-sound.mp3" type="audio/mpeg">
@@ -74,7 +80,8 @@
             <button class="button startbutton" onclick="centerConsoleView.startView()"></button>
           </div>
           <div id="strict">
-            <button class="button strictlight"></button>
+            <button 
+                    id="strictlight" class="button mylight  strictlightOff"></button>
             <button class="button strictbutton" onclick="centerConsoleView.strictView()"></button>
 
 
@@ -88,7 +95,7 @@
         </div>
 
         <label class="switch">
-
+    
   <input class="switch-input" type="checkbox">
   <span class="slider round"></span>
 </label>
@@ -99,8 +106,3 @@
 
   </div>
 </body>
-
-    <script src="js/index.js"></script>
-
-</body>
-</html>
