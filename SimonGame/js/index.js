@@ -20,161 +20,190 @@ let start = false;
 let strict = false;
 let counted = 0;
 let on = false;
-let indexarr = [];
-
+let currentArr = [];
+//================================================
 let colorBtnView = {
   green: function() {
     playerCombo.push("green");
+    currentArr.push("green");
     greenBtn.play();
-    if (
-      playerCombo.length === counted 
-      // &&
-      // controller.checker(playerCombo, counted)
-    ) {
-      if (
-        on &&
-        start &&
-        JSON.stringify(controller.get().slice(0, [counted])) ===
-          JSON.stringify(playerCombo)
-      ) {
+    let checkG = controller.checker("green", currentArr);
+    if (playerCombo.length === counted && checkG) {
+      if (on && start) {
         controller.count();
         centerConsoleView.countView();
         playerCount++;
         playerCombo = [];
         controller.game();
-      } else {
-        lostSound.play();
+      }
+    } else if (!checkG && strict) {
+      controller.wrong();
+      lostSound.play();
+      setTimeout(function() {
+        playerCombo = [];
+        counted = 0;
+        playerCount = 0;
+        controller.reset();
+        controller.init();
+        centerConsoleView.startView();
+      }, 1000);
+    } else if (!checkG) {
+      lostSound.play();
+      controller.wrong();
+      setTimeout(function() {
         playerCombo.pop();
         playerCombo = [];
         controller.game();
-      }
-    } 
+      }, 2000);
+    }
   },
   red: function() {
     playerCombo.push("red");
+    currentArr.push("red");
     redBtn.play();
-    if (
-      playerCombo.length === counted
-      // &&
-      // controller.checker(playerCombo, counted)
-    ) {
-      if (
-        on &&
-        start &&
-        JSON.stringify(controller.get().slice(0, [counted])) ===
-          JSON.stringify(playerCombo)
-      ) {
+    let checkR = controller.checker(playerCombo, currentArr);
+    if (playerCombo.length === counted && checkR) {
+      if (on && start) {
         controller.count();
         centerConsoleView.countView();
         playerCount++;
         playerCombo = [];
         controller.game();
-      } else {
-        lostSound.play();
-        playerCombo = [];
-        playerCombo.pop();
-        controller.game();
       }
-    } 
+    } else if (!checkR && strict) {
+      controller.wrong();
+      lostSound.play();
+      setTimeout(function() {
+        playerCombo = [];
+        counted = 0;
+        playerCount = 0;
+        controller.reset();
+        controller.init();
+        centerConsoleView.startView();
+      }, 1000);
+    } else if (!checkR) {
+      controller.wrong();
+      lostSound.play();
+      setTimeout(function() {
+        playerCombo.pop();
+        playerCombo = [];
+        controller.game();
+      }, 2000);
+    }
   },
   blue: function() {
     playerCombo.push("blue");
+    currentArr.push("blue");
     blueBtn.play();
-    if (
-      playerCombo.length === counted 
-      // &&
-      // controller.checker(playerCombo, counted)
-    ) {
-      if (
-        on &&
-        start &&
-        JSON.stringify(controller.get().slice(0, [counted])) ===
-          JSON.stringify(playerCombo)
-      ) {
+    let checkB = controller.checker(playerCombo, currentArr);
+    if (playerCombo.length === counted && checkB) {
+      if (on && start && playerCombo.length === counted) {
         controller.count();
         centerConsoleView.countView();
         playerCount++;
         playerCombo = [];
         controller.game();
-      } else {
-        lostSound.play();
+      }
+    } else if (!checkB && strict) {
+      controller.wrong();
+      lostSound.play();
+      setTimeout(function() {
+        playerCombo = [];
+        counted = 0;
+        playerCount = 0;
+        controller.reset();
+        controller.init();
+        centerConsoleView.startView();
+      }, 1000);
+    } else if (!checkB) {
+      lostSound.play();
+      controller.wrong();
+      setTimeout(function() {
         playerCombo.pop();
         playerCombo = [];
         controller.game();
-      }
+      }, 2000);
     }
   },
   yellow: function() {
     playerCombo.push("yellow");
+    currentArr.push("yellow");
     yellowBtn.play();
-    if (
-      playerCombo.length === counted 
-      // &&
-      // controller.checker(playerCombo, counted)
-    ) {
-      if (
-        on &&
-        start &&
-        JSON.stringify(controller.get().slice(0, [counted])) ===
-          JSON.stringify(playerCombo)
-      ) {
+    let checkY = controller.checker(playerCombo, currentArr);
+    if (playerCombo.length === counted && checkY) {
+      if (on && start) {
         controller.count();
         centerConsoleView.countView();
         playerCount++;
         playerCombo = [];
         controller.game();
-      } else {
-        lostSound.play();
+      }
+    } else if (!checkY && strict) {
+      controller.wrong();
+      lostSound.play();
+      setTimeout(function() {
+        playerCombo = [];
+        counted = 0;
+        playerCount = 0;
+        controller.reset();
+        controller.init();
+        centerConsoleView.startView();
+      }, 1000);
+    } else if (!checkY) {
+      lostSound.play();
+      controller.wrong();
+      setTimeout(function() {
         playerCombo.pop();
         playerCombo = [];
         controller.game();
-      }
-    } 
-  }
-};
-
-let computercolorBtnView = {
-  colorSelect: function(color) {
-    if (color === "green") {
-      setTimeout(function() {
-        greenBtn.play();
-        greenLightBtn.className += " " + "quarterCircleTopLeftPressed";
-      }, 1000);
-
-      setTimeout(function() {
-        greenLightBtn.classList.remove("quarterCircleTopLeftPressed");
-      }, 2000);
-    } else if (color === "red") {
-      setTimeout(function() {
-        redBtn.play();
-        redLightBtn.className += " " + "quarterCircleTopRightPressed";
-      }, 1000);
-
-      setTimeout(function() {
-        redLightBtn.classList.remove("quarterCircleTopRightPressed");
-      }, 2000);
-    } else if (color === "blue") {
-      setTimeout(function() {
-        blueBtn.play();
-        blueLightBtn.className += " " + "quarterCircleBottomLeftPressed";
-      }, 1000);
-
-      setTimeout(function() {
-        blueLightBtn.classList.remove("quarterCircleBottomLeftPressed");
-      }, 2000);
-    } else if (color === "yellow") {
-      setTimeout(function() {
-        yellowBtn.play();
-        yellowLightBtn.className += " " + "quarterCircleBottomRightPressed";
-      }, 1000);
-
-      setTimeout(function() {
-        yellowLightBtn.classList.remove("quarterCircleBottomRightPressed");
       }, 2000);
     }
   }
 };
+//===================================================
+let computercolorBtnView = {
+  colorSelect: function(color) {
+    if (color === "green" && start) {
+      setTimeout(function() {
+        greenBtn.play();
+        greenLightBtn.className += " " + "quarterCircleTopLeftPressed";
+      }, 500);
 
+      setTimeout(function() {
+        greenLightBtn.classList.remove("quarterCircleTopLeftPressed");
+      }, 800);
+    } else if (color === "red" && start) {
+      setTimeout(function() {
+        redBtn.play();
+        redLightBtn.className += " " + "quarterCircleTopRightPressed";
+      }, 500);
+
+      setTimeout(function() {
+        redLightBtn.classList.remove("quarterCircleTopRightPressed");
+      }, 800);
+    } else if (color === "blue" && start) {
+      setTimeout(function() {
+        blueBtn.play();
+        blueLightBtn.className += " " + "quarterCircleBottomLeftPressed";
+      }, 500);
+
+      setTimeout(function() {
+        blueLightBtn.classList.remove("quarterCircleBottomLeftPressed");
+      }, 800);
+    } else if (color === "yellow" && start) {
+      setTimeout(function() {
+        yellowBtn.play();
+        yellowLightBtn.className += " " + "quarterCircleBottomRightPressed";
+      }, 500);
+
+      setTimeout(function() {
+        yellowLightBtn.classList.remove("quarterCircleBottomRightPressed");
+      }, 800);
+    }
+  }
+};
+
+//================================================
 let centerConsoleView = {
   onView: function() {
     let onBtn = document.getElementsByClassName("switch-input")[0].checked
@@ -199,12 +228,9 @@ let centerConsoleView = {
       setTimeout(function() {
         controller.on();
       }, 2000);
-
-      //controller.on()
     }
   },
   offBtnView: function() {
-    //document.getElementById("goodbyeAudio").play();
     greenLightBtn.className += " " + "disabledbutton";
     redLightBtn.className += " " + "disabledbutton";
     blueLightBtn.className += " " + "disabledbutton";
@@ -213,6 +239,17 @@ let centerConsoleView = {
   },
   strictView: function() {
     strict = true;
+    console.log("STRICT" + strict);
+    let light = document.getElementById("strictlight");
+    light.classList.remove("strictlightOff");
+    light.className += " " + "strictlightON";
+  },
+  removeStrict: function() {
+    strict = false;
+    console.log("STRICT" + strict);
+    let light = document.getElementById("strictlight");
+    light.classList.remove("strictlightON");
+    light.className += " " + "strictlightOff";
   },
   countView: function() {
     let num = Number(counted) < 10 ? "0" + counted : counted;
@@ -229,6 +266,8 @@ let centerConsoleView = {
   }
 };
 
+//================================================
+
 let controller = {
   on: function() {
     console.log("inside");
@@ -243,47 +282,83 @@ let controller = {
     centerConsoleView.countView();
     this.game();
   },
-  checker: function(arr, index) {
+  checker: function(color, arr) {
     let data = this.get();
-//     console.log(arr, " *arr");
-//     console.log(index - 1, " *index");
-      let newarr = data.slice(0, index);
+    let everyVal = arr.every((item, index) => item === data[index]);
+    console.log(everyVal + "everyval");
 
-//     return newarr.indexOf(arr[0]) !== -1;
-    console.log(arr[0] + "ARR[0]")
-    console.log(data[index-1] + "index in arr")
-    return arr[0] === data[index-1]
+    return everyVal;
+  },
+  win: function() {
+    document.getElementById("winAudio").play();
+    alert("YOU WIN!");
+    setTimeout(function() {
+      window.location.reload(true);
+    }, 1000);
+  },
+  wrong: function() {
+    document.getElementById("count").innerHTML = `<h1>!!</h1>`;
+    setTimeout(function() {
+      document.getElementById("count").innerHTML = `<h1>   </h1>`;
+      setTimeout(function() {
+        count = document.getElementById("count").innerHTML = `<h1>!!</h1>`;
+        centerConsoleView.countView();
+      }, 500);
+    }, 500);
   },
   game: function() {
+    console.log("inside controller game");
     let data = model.getData();
     let newarr = data.slice(0, counted);
     console.log(newarr + "newarr");
     for (let i = 0; i < newarr.length; i++) {
       let index = i;
+
       (function(index) {
         setTimeout(function() {
           computercolorBtnView.colorSelect(newarr[index]);
         }, index * 1000);
       })(index);
     }
+    currentArr = [];
   },
   get: function() {
     let compData = model.getData();
     return compData;
   },
   count: function() {
+    if (counted === 20) {
+      this.win();
+    }
     counted = Number(counted);
     counted++;
     counted = counted;
   },
   off: function() {
-    counted = 0;
-    start = false;
-    on = false;
-    strict = false;
+    document.getElementById("count").innerHTML = `<h1>  </h1>`;
     gameCombo = [];
     playerCombo = [];
+    localstorage = {};
+    playerCount = 0;
+    start = false;
+    strict = false;
+    counted = 0;
+    on = false;
+    currentArr = [];
+    //window.location.reload(true);
+    centerConsoleView.removeStrict();
+    this.init();
+  },
+  reset: function() {
     document.getElementById("count").innerHTML = `<h1>  </h1>`;
+    gameCombo = [];
+    playerCombo = [];
+    localstorage = {};
+    playerCount = 0;
+    start = true;
+    counted = 0;
+    on = true;
+    currentArr = [];
   },
   init: function() {
     let counter = 0;
@@ -308,6 +383,7 @@ let controller = {
   }
 };
 
+//================================================
 let model = {
   setData: function(gameCombo) {
     console.log(gameCombo);
@@ -318,4 +394,5 @@ let model = {
     return storage;
   }
 };
+
 controller.init();
