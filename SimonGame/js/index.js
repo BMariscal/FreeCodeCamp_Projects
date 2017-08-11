@@ -347,13 +347,8 @@ let controller = {
     }
     for (let i = 0; i < newarr.length; i++) {
       let index = i;
-      if (start === false) {
-        return;
-      }
+
       (function(index) {
-        if (start === false) {
-          return;
-        }
         parser = setTimeout(function() {
           computercolorBtnView.colorSelect(newarr[index]);
         }, index * 1000);
