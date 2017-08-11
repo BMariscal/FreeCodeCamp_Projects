@@ -21,7 +21,6 @@ let strict = false;
 let counted = 0;
 let on = false;
 let currentArr = [];
-
 //================================================
 let colorBtnView = {
   green: function() {
@@ -235,8 +234,6 @@ let centerConsoleView = {
       this.init();
       this.offBtnView();
       on = true;
-
-
     }
   },
   offBtnView: function() {
@@ -247,11 +244,21 @@ let centerConsoleView = {
     controller.off();
   },
   strictView: function() {
-    strict = true;
-    console.log("STRICT" + strict);
-    let light = document.getElementById("strictlight");
-    light.classList.remove("strictlightOff");
-    light.className += " " + "strictlightON";
+    if (on) {
+      if (!strict) {
+        strict = true;
+        console.log("STRICT" + strict);
+        let light = document.getElementById("strictlight");
+        light.classList.remove("strictlightOff");
+        light.className += " " + "strictlightON";
+      } else {
+        strict = false;
+        console.log("STRICT false" + strict);
+        let light = document.getElementById("strictlight");
+        light.classList.remove("strictlightON");
+        light.className += " " + "strictlightOff";
+      }
+    }
   },
   removeStrict: function() {
     strict = false;
@@ -262,8 +269,8 @@ let centerConsoleView = {
   },
   countView: function() {
     let num = Number(counted) < 10 ? "0" + counted : counted;
-    if (num === "00"){
-      num = "!!"
+    if (num === "00") {
+      num = "!!";
     }
     count = document.getElementById("count").innerHTML = `<h1>${num}</h1>`;
   },
