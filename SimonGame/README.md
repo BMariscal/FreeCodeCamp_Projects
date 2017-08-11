@@ -1,5 +1,5 @@
 
-## Simon Game [link](https://codepen.io/ohohoreos/full/PjrgzB/)
+## Simon Game [Link](https://codepen.io/ohohoreos/full/PjrgzB/)
 
 
 #### User Story: I am presented with a random series of button presses.
