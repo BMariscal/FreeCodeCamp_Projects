@@ -21,6 +21,7 @@ let strict = false;
 let counted = 0;
 let on = false;
 let currentArr = [];
+let parser;
 //================================================
 let colorBtnView = {
   green: function() {
@@ -203,6 +204,7 @@ let computercolorBtnView = {
   }
 };
 
+
 //================================================
 let centerConsoleView = {
   onView: function() {
@@ -229,11 +231,15 @@ let centerConsoleView = {
       setTimeout(function() {
         controller.on();
       }, 2000);
-    } else {
+    } else if (counted > 0){
       start = false;
       this.init();
       this.offBtnView();
       on = true;
+      clearTimeout(parser);
+      setTimeout(function(){
+        centerConsoleView.startView()},2000)
+ 
     }
   },
   offBtnView: function() {
@@ -245,19 +251,22 @@ let centerConsoleView = {
   },
   strictView: function() {
     if (on) {
-      if (!strict) {
-        strict = true;
-        console.log("STRICT" + strict);
-        let light = document.getElementById("strictlight");
-        light.classList.remove("strictlightOff");
-        light.className += " " + "strictlightON";
-      } else {
+      if (!strict){
+      strict = true;
+      console.log("STRICT" + strict);
+      let light = document.getElementById("strictlight");
+      light.classList.remove("strictlightOff");
+      light.className += " " + "strictlightON";  
+      }else{
         strict = false;
-        console.log("STRICT false" + strict);
-        let light = document.getElementById("strictlight");
-        light.classList.remove("strictlightON");
-        light.className += " " + "strictlightOff";
+       console.log("STRICT false" + strict);
+      let light = document.getElementById("strictlight");
+      light.classList.remove("strictlightON");
+      light.className += " " + "strictlightOff";  
+        
+        
       }
+
     }
   },
   removeStrict: function() {
@@ -312,7 +321,10 @@ let controller = {
     document.getElementById("winAudio").play();
     alert("YOU WIN!");
     setTimeout(function() {
-      window.location.reload(true);
+      centerConsoleView.offBtnView();
+      on = true;
+      start = false;
+      centerConsoleView.init();
     }, 1000);
   },
   wrong: function() {
@@ -342,7 +354,7 @@ let controller = {
         if (start === false) {
           return;
         }
-        setTimeout(function() {
+        parser = setTimeout(function() {
           computercolorBtnView.colorSelect(newarr[index]);
         }, index * 1000);
       })(index);
