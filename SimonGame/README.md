@@ -1,6 +1,6 @@
 
-## Simon Game
-
+## Simon Game: 
+Link to game [here]( https://d3rvwrf1x48r3i.cloudfront.net/)
 
      User Story: 
      * I am presented with a random series of button presses.
