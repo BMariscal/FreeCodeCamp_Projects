@@ -1,3 +1,5 @@
+/*Created by Briceida Mariscal*/
+
 let greenBtn = document.getElementById("greenBtnAudio");
 let redBtn = document.getElementById("redBtnAudio");
 let blueBtn = document.getElementById("blueBtnAudio");
@@ -22,7 +24,9 @@ let counted = 0;
 let on = false;
 let currentArr = [];
 let parser;
+
 //================================================
+
 let colorBtnView = {
   green: function() {
     playerCombo.push("green");
@@ -161,7 +165,9 @@ let colorBtnView = {
     }
   }
 };
+
 //===================================================
+
 let computercolorBtnView = {
   colorSelect: function(color) {
     if (color === "green" && start) {
@@ -206,11 +212,12 @@ let computercolorBtnView = {
 
 
 //================================================
+
 let centerConsoleView = {
   onView: function() {
-    let onBtn = document.getElementsByClassName("switch-input")[0].checked
-      ? "yes"
-      : "no";
+    let onBtn = document.getElementsByClassName("switch-input")[0].checked ?
+      "yes" :
+      "no";
     if (onBtn === "yes") {
       this.init();
       on = true;
@@ -231,15 +238,15 @@ let centerConsoleView = {
       setTimeout(function() {
         controller.on();
       }, 2000);
-    } else if (counted > 0){
+    } else if (counted > 0) {
       start = false;
       this.init();
       this.offBtnView();
       on = true;
       clearTimeout(parser);
-      setTimeout(function(){
-        centerConsoleView.startView()},2000)
- 
+      setTimeout(function() {
+        centerConsoleView.startView();
+      }, 2000);
     }
   },
   offBtnView: function() {
@@ -251,27 +258,21 @@ let centerConsoleView = {
   },
   strictView: function() {
     if (on) {
-      if (!strict){
-      strict = true;
-      console.log("STRICT" + strict);
-      let light = document.getElementById("strictlight");
-      light.classList.remove("strictlightOff");
-      light.className += " " + "strictlightON";  
-      }else{
+      if (!strict) {
+        strict = true;
+        let light = document.getElementById("strictlight");
+        light.classList.remove("strictlightOff");
+        light.className += " " + "strictlightON";
+      } else {
         strict = false;
-       console.log("STRICT false" + strict);
-      let light = document.getElementById("strictlight");
-      light.classList.remove("strictlightON");
-      light.className += " " + "strictlightOff";  
-        
-        
+        let light = document.getElementById("strictlight");
+        light.classList.remove("strictlightON");
+        light.className += " " + "strictlightOff";
       }
-
     }
   },
   removeStrict: function() {
     strict = false;
-    console.log("STRICT" + strict);
     let light = document.getElementById("strictlight");
     light.classList.remove("strictlightON");
     light.className += " " + "strictlightOff";
@@ -298,23 +299,16 @@ let centerConsoleView = {
 
 let controller = {
   on: function() {
-    console.log("inside");
     let data = model.getData();
-    console.log(data);
     let currentIndex = Number(counted);
-    console.log(currentIndex);
-    console.log(currentIndex + " is currentIndex");
     computercolorBtnView.colorSelect(data[currentIndex]);
     this.count();
-    console.log(counted + " counted");
     centerConsoleView.countView();
     this.game();
   },
   checker: function(color, arr) {
     let data = this.get();
     let everyVal = arr.every((item, index) => item === data[index]);
-    console.log(everyVal + "everyval");
-
     return everyVal;
   },
   win: function() {
@@ -338,10 +332,8 @@ let controller = {
     }, 500);
   },
   game: function() {
-    console.log("inside controller game");
     let data = model.getData();
     let newarr = data.slice(0, counted);
-    console.log(newarr + "newarr");
     if (start === false) {
       return;
     }
@@ -379,7 +371,6 @@ let controller = {
     counted = 0;
     on = false;
     currentArr = [];
-    //window.location.reload(true);
     centerConsoleView.removeStrict();
     this.init();
   },
@@ -409,7 +400,7 @@ let controller = {
       counter++;
       gameCombo.push(colorkey);
     }
-
+    
     model.setData(gameCombo);
     document.getElementsByClassName("switch-input")[0].onchange = function() {
       centerConsoleView.onView();
@@ -418,9 +409,9 @@ let controller = {
 };
 
 //================================================
+
 let model = {
   setData: function(gameCombo) {
-    console.log(gameCombo);
     localstorage.gameData = gameCombo;
   },
   getData: function() {
