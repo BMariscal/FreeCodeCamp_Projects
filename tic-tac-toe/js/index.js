@@ -53,8 +53,6 @@ function gameView(arr) {
 
 //update view with the winner
 function theWinner(winner) {
-  console.log(comptoken + " comptoken");
-  console.log("winner " + winner);
   if (winner === comptoken) {
     document.getElementById("Winner").innerHTML = "Computer Wins";
     winnerTally = winner === "X" ? (Xwin = Xwin + 1) : (Owin = Owin + 1);
@@ -155,27 +153,27 @@ function computer() {
     setTimeout(function() {
       document.getElementById("Winner").innerHTML = "Your turn " + symb;
     }, 1000);
-  } else if(computerCount > 0){
-     let newidx = computerChoice(gameArr, comptoken);
-     clickCount++;
-     computerCount++;
-     gameArr.splice(newidx, 1, comptoken);
-     gameView(gameArr);
-     let winner = checkWinner(gameArr);
+  } else if (computerCount > 0) {
+    let newidx = computerChoice(gameArr, comptoken);
+    clickCount++;
+    computerCount++;
+    gameArr.splice(newidx, 1, comptoken);
+    gameView(gameArr);
+    let winner = checkWinner(gameArr);
     theWinner(winner);
     setTimeout(function() {
       document.getElementById("Winner").innerHTML = "Your turn " + symb;
     }, 1000);
-      
-  }else {
+
+  } else {
     computer();
   }
 }
 
 //makes computer smarter
-function computerChoice(arr,token){
-    const opponentToken = (token === "X"? "O": "X");
-    const winner = [
+function computerChoice(arr, token) {
+  const opponentToken = (token === "X" ? "O" : "X");
+  const winner = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -185,53 +183,47 @@ function computerChoice(arr,token){
     [0, 4, 8],
     [2, 4, 6]
   ];
-  
+
   for (let i = 0; i < winner.length; i++) {
-    const [a, b, c] = winner[i]; 
+    const [a, b, c] = winner[i];
     const idx1 = (arr[a] === token && arr[b] === token) && arr[c] === "";
     const idx2 = (arr[a] === token && arr[c] === token) && arr[b] === "";
     const idx3 = (arr[b] === token && arr[c] === token) && arr[a] === "";
-    const first =(arr[a] === opponentToken && arr[b] === opponentToken) && arr[c] === "";
-    const second =(arr[a] === opponentToken && arr[c] === opponentToken) && arr[b] === "";
-    const third =(arr[b] === opponentToken && arr[c] === opponentToken) && arr[a] === "";
-    if (idx1 || idx2 || idx3){
-        if ( idx3 ){
-          console.log('idx a' + a)
-          return a;
-        }else if(idx2 ){
-          console.log('idx b' + b)
-          return b;
-        }else if(idx1 ){
-          console.log('idx c' + c)
-          return c;
-        }    
-        
-    }
-    if( first|| second || third ){
-        if ( third ){
-          console.log('third a' + a)
-          return a;
-        }else if(second){
-           console.log('third b' + b)
-          return b;
-        }else if(first ){
-           console.log('third c' + c)
-          return c;
-        }    
-            
-    }
-  }
- for (let i = 0; i < winner.length; i++) {
-    const [a, b, c] = winner[i]; 
- 
-      if (arr[a] === ""){
+    const first = (arr[a] === opponentToken && arr[b] === opponentToken) && arr[c] === "";
+    const second = (arr[a] === opponentToken && arr[c] === opponentToken) && arr[b] === "";
+    const third = (arr[b] === opponentToken && arr[c] === opponentToken) && arr[a] === "";
+    if (idx1 || idx2 || idx3) {
+      if (idx3) {
         return a;
-      }else if(arr[b] === ""){
+      } else if (idx2) {
         return b;
-      }else if(arr[c] === ""){
+      } else if (idx1) {
         return c;
       }
- }
+
+    }
+    if (first || second || third) {
+      if (third) {
+        return a;
+      } else if (second) {
+        return b;
+      } else if (first) {
+        return c;
+      }
+
+    }
+  }
+  for (let i = 0; i < winner.length; i++) {
+    const [a, b, c] = winner[i];
+
+    if (arr[a] === "") {
+      return a;
+    } else if (arr[b] === "") {
+      return b;
+    } else if (arr[c] === "") {
+      return c;
+    }
+  }
 }
 
 
@@ -282,6 +274,7 @@ function reset(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     let index = i;
+
     function doStuff(index, arr) {
       document.getElementById(`btn${index}`).innerHTML = "";
       document.getElementById(`btn${index}`).disabled = false;
