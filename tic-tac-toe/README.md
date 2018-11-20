@@ -1,4 +1,4 @@
-## Tic-tac-toe: [Link to game](https://di1qzyhn9187c.cloudfront.net/)
+## Tic-tac-toe: [Link to game](https://codepen.io/bmariscal/pen/eQZQzq)
 
 User Story: I can play a game of Tic Tac Toe with the computer.
 
