@@ -1,4 +1,6 @@
-## Tic-tac-toe: [Link to game](https://codepen.io/bmariscal/pen/eQZQzq)
+## [Link to game](http://intitactactoed.s3-website.us-east-2.amazonaws.com/)
+## Tic-tac-toe: [Link to codepen](https://codepen.io/bmariscal/pen/eQZQzq)
+
 
 User Story: I can play a game of Tic Tac Toe with the computer.
 
