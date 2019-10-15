@@ -1,6 +1,6 @@
 
 ## Simon Game: 
-### Link to game [here] (http://simongamo.s3-website.us-east-2.amazonaws.com/)
+### Link to game [here](http://simongamo.s3-website.us-east-2.amazonaws.com/)
 ### Link to codepen [here](https://codepen.io/bmariscal/pen/XydyKW)
 
      User Story: 
