@@ -1,7 +1,7 @@
 
 ## Simon Game: 
 ### Link to game [here](http://simongamo.s3-website.us-east-2.amazonaws.com/)
-### Link to codepen [here](https://codepen.io/bmariscal/pen/XydyKW)
+### Link to codepen [here](https://codepen.io/ohohoreos/full/PjrgzB)
 
      User Story: 
      * I am presented with a random series of button presses.
